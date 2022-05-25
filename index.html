@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>odin sign-up form</title>
+    <link href="https://unpkg.com/normalize.css@8.0.1/" rel="stylesheet" />
+    <link href="src/landingForm.css" rel="stylesheet" />
+    <link href="src/hero.css" rel="stylesheet" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+      }
+
+      @font-face {
+        font-family: "Norse Bold";
+        src: url("https://cdn.statically.io/gh/TheOdinProject/theodinproject/efdc2888072f409e687d31dc580595dbe4fe0ff4/app/assets/fonts/Norse-Bold.otf");
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-pic">
+        <img
+          alt="exotic leaves in the jungle"
+          src="https://images.unsplash.com/photo-1585202900225-6d3ac20a6962"
+        />
+      </div>
+      <div class="hero-citation">
+        Photo by
+        <a href="https://unsplash.com/@haliewestphoto">Halie West</a> on
+        <a href="https://unsplash.com/photos/25xggax4bSA">Unsplash</a>
+      </div>
+      <div class="hero-logo">
+        <img
+          alt="logo of 'The Odin Project'"
+          src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png"
+        />
+        <span>Odin</span>
+      </div>
+    </section>
+    <section class="landingForm">
+      <div class="landingForm-intro">
+        <p>
+          This is not a real online service ! You know you need something like
+          this in your life to help you realize your deepest dreams. Sign up
+          <em>now</em> to get started.
+        </p>
+        <p>You <em>know</em> you want to.</p>
+      </div>
+      <main class="landingForm-form">
+        <form action="#" id="signupForm">
+          <fieldset>
+            <h1>Let's do this!</h1>
+            <div>
+              <label for="first_name">first name</label>
+              <input
+                autocomplete="given-name"
+                id="first_name"
+                maxlength="20"
+                minlength="1"
+                placeholder="John"
+                required
+                type="text"
+              />
+              <div class="error-tip">
+                First name should be one character at least and twenty
+                characters at most.
+              </div>
+            </div>
+            <div>
+              <label for="last_name">last name</label>
+              <input
+                autocomplete="family-name"
+                id="last_name"
+                maxlength="20"
+                minlength="1"
+                placeholder="Doe"
+                required
+                type="text"
+              />
+              <div class="error-tip">
+                Last name should be one character at least and twenty characters
+                at most.
+              </div>
+            </div>
+            <div>
+              <label for="email">email name</label>
+              <input
+                autocomplete="email"
+                id="email"
+                placeholder="example@domain.com"
+                type="email"
+              />
+              <div class="error-tip">
+                Please enter valid email address, e.g. example@domain.com
+              </div>
+            </div>
+            <div>
+              <label for="phone_number">phone number</label>
+              <input
+                autocomplete="tel"
+                id="phone_number"
+                pattern="1\d{10,10}"
+                placeholder="13700000000"
+                type="tel"
+              />
+              <div class="error-tip">
+                Mobile phone numbers should be exactly 11 numbers and starts
+                with 1.
+              </div>
+            </div>
+            <div>
+              <label for="password">password</label>
+              <input
+                autocomplete="new-password"
+                id="password"
+                pattern="(?=.*\d)(?=.*[a-zA-Z]).{6,}"
+                placeholder=" "
+                required
+                type="password"
+              />
+              <div class="error-tip">
+                Your password must be at least 6 characters as well as contain
+                at least one number.
+              </div>
+            </div>
+            <div>
+              <label for="password_confirm">confirm password</label>
+              <input
+                autocomplete="new-password"
+                id="password_confirm"
+                placeholder=" "
+                required
+                type="password"
+              />
+              <div class="error-tip">
+                Please make sure your passwords match.
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit">Create Account</button>
+        </form>
+        <small>Already have an account? <a href="#">Log in</a></small>
+      </main>
+    </section>
+  </body>
+  <script>
+    const pwd = document.getElementById("password");
+    const pwd_confirm = document.getElementById("password_confirm");
+
+    const check = () => {
+      if (pwd.value !== pwd_confirm.value) {
+        pwd_confirm.setCustomValidity(" ");
+      } else {
+        pwd_confirm.setCustomValidity("");
+      }
+    };
+    pwd_confirm.addEventListener("input", check);
+    pwd.addEventListener("input", check);
+  </script>
+</html>

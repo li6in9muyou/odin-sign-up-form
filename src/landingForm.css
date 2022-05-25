@@ -1,0 +1,138 @@
+.landingForm {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5em;
+  padding: 5em 0;
+  background-color: lightgray;
+  font-size: 20px;
+  overflow-y: auto;
+}
+
+.landingForm > * {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.landingForm > .landingForm-intro {
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 110%;
+  font-size: 1em;
+  max-width: 75ch;
+}
+
+.landingForm > .landingForm-intro > p:last-child {
+  margin-top: 1.2em;
+}
+
+.landingForm > .landingForm-form {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#signupForm > fieldset {
+  border: none;
+  padding: 0.8em 2em;
+  background-color: white;
+  box-shadow: 0 4px 3px 0 #77889930;
+
+  display: grid;
+  grid-template-columns: repeat(2, fit-content(100%));
+  row-gap: 0.7em;
+  column-gap: 3em;
+}
+
+#signupForm > fieldset > * {
+  font-family: sans-serif;
+}
+
+#signupForm > fieldset > h1 {
+  font-size: 1.5em;
+  grid-column: 1 / span 2;
+}
+
+#signupForm > fieldset > div {
+  display: flex;
+  flex-direction: column;
+  line-height: 80%;
+}
+
+#signupForm > fieldset > div > label {
+  text-transform: uppercase;
+  font-size: 0.6em;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+}
+
+#signupForm > fieldset > div > input {
+  border: solid #0000001f 2px;
+  border-radius: 5px;
+  padding: 0.2em 0.4em;
+  max-width: 15em;
+}
+
+#signupForm > fieldset > div > input::placeholder {
+  opacity: 50%;
+}
+
+#signupForm > fieldset > div > input:focus-visible {
+  background-color: #0022ff10;
+  outline: none;
+  box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+#signupForm > fieldset > div > input:valid:not(:placeholder-shown) {
+  outline: solid #596d48 3px;
+}
+
+#signupForm > fieldset > div > input:invalid:not(:placeholder-shown) {
+  outline: solid red 3px;
+}
+
+#signupForm > fieldset > div > input:invalid:focus ~ .error-tip {
+  max-height: 200px;
+  padding: 10px;
+}
+
+#signupForm > fieldset > div > .error-tip {
+  color: red;
+  font-size: 0.6em;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: 300ms;
+}
+
+#signupForm > button[type="submit"] {
+  background-color: #596d48;
+  border: none;
+  padding: 0.3em 2.5em;
+  color: whitesmoke;
+  font-family: sans-serif;
+  border-radius: 0.2em;
+  margin: 1.5em 2em;
+  box-shadow: 0 4px 3px 0 #77889960;
+  font-weight: bold;
+}
+
+#signupForm > button[type="submit"]:active {
+  box-shadow: none;
+  transform: scale(95%);
+}
+
+.landingForm > .landingForm-form > small {
+  font-size: 1em;
+  font-family: sans-serif;
+  margin: 0 2em;
+}
+
+.landingForm > .landingForm-form > small > a {
+  text-decoration: none;
+  color: #596d48;
+  font-weight: bold;
+}
+
+.landingForm > .landingForm-form > h1 {
+  font-family: sans-serif;
+}
